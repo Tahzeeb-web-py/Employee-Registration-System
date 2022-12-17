@@ -1,0 +1,20 @@
+{%extends "Registration/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    {{form.name|as_crispy_field}}
+    
+    <div class="row">
+        <div class="col-md-7">
+            {{form.mobileno|as_crispy_field}}
+            
+        </div>
+        <div class="col-md-5">{{form.position|as_crispy_field}}</div>
+    </div>
+    {{form.address|as_crispy_field}}
+
+    <button type="submit" class="btn btn-success">Submit <i class="fas fa-database"></i></button>
+</form>
+{% endblock content%}
