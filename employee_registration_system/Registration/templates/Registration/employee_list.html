@@ -15,6 +15,7 @@
             </td><td>
                 Position
             </td>
+            <td><a href="{% url 'employee_insert' %}"><i class="btn btn-outline-success">Add New</i></a></td>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +28,14 @@
             <td>{{employee.address}}</td>
             <td>{{employee.mobileno}}</td>
             <td>{{employee.position}}</td>
+            <td><a href="{% url 'employee_update' employee.id %}" class="btn text-secondary px-0"><i class="far fa-edit falg"></i>
+            <form action="{% url 'employee_delete' employee.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn">
+                    <i class="far fa-trash-alt fa-lg text-danger flaot-right"></i>
+                </button>
+            </form></a>
+            </td>
         </tr>
 
         {% endfor %}

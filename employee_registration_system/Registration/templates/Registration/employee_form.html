@@ -15,6 +15,14 @@
     </div>
     {{form.address|as_crispy_field}}
 
-    <button type="submit" class="btn btn-success">Submit <i class="fas fa-database"></i></button>
+    <div class="row">
+        <div class="col-md-8">
+               <button type="submit" class="btn btn-success">Submit <i class="fas fa-database"></i></button>
+        </div>
+    </div>
 </form>
+<hr>
+<div class="col-md-4">
+    <a href="{% url 'employee_list' %}"><button class="btn btn-secondary btn-block btn-lg">Back to List</button></a>
+</div>
 {% endblock content%}
