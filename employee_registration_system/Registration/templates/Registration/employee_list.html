@@ -1,5 +1,36 @@
 {%extends "Registration/base.html" %}
 
 {% block content %}
-<h3>Hi there is this emp_list</h3>
+<table class="table table-borderless">
+    <thead class="boder-bottom font-weight-bold">
+        <tr>
+            <td>
+                Name
+            </td>
+            <td>
+                Address
+            </td>
+            <td>
+                Mobile No
+            </td><td>
+                Position
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        
+            
+        
+        {% for employee in employee_list %}
+        <tr>
+            <td>{{employee.name}}</td>
+            <td>{{employee.address}}</td>
+            <td>{{employee.mobileno}}</td>
+            <td>{{employee.position}}</td>
+        </tr>
+
+        {% endfor %}
+    
+    </tbody>
+</table>
 {% endblock content%}
